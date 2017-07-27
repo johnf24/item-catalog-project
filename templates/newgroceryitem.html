@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>New Grocery Item</h1>
+
+<!--Form-->
+
+    <form action="#" method='post'>
+
+        <br>
+        
+        <p>Item:</p>
+		<input type='text' size='30' name='name'>
+	    <p>Description:</p>
+		<input type='text' size='30' name='description'>
+	    <p>Price:</p>
+		<input type='text' size='30' name='price'>
+	    <p>Catagory:</p>
+		<input type='radio' name='catagory' value='Produce'>Produce</br>
+		<input type='radio' name='catagory' value='Dairy'>Dairy</br>
+		<input type='radio' name='catagory' value='Bakery'>Bakery</br>
+        <input type='radio' name='catagory' value='Beverage'>Beverage</br>
+    
+        </br>
+
+        <input type='submit' value='Create'>
+
+    </form>
+
+<div>
+
+</body>
+</html>
+

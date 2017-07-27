@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+	
+    <h1>Edit Grocery Item</h1>
+
+<!--Form-->
+
+    <form action="#" method='post'>
+
+        <br>
+
+        <p>Name:</p>
+        <input type='text' size='30' name='name' placeholder='{{item.name}}'>
+        <p>Description:</p>
+		<input type='text' size='30' name='description' placeholder ='{{item.description}}'>
+	    <p>Price:</p>
+		<input type='text' size='30' name='price' placeholder ='{{item.price}}'>
+        
+        <p>Catagory:<p>
+	    {% if item.catagory == 'Produce' %} <!--appetizer-->
+		<dd><input type='radio' name='catagory' value='Produce'checked>Produce</dd>
+	    {%else%}
+	    <dd><input type='radio' name='catagory' value='Produce'>Produce</dd>
+        {% endif %}
+
+        {% if item.catagory == 'Dairy' %} <!--entree-->
+        <dd><input type='radio' name='catagory' value='Dairy'checked>Dairy</dd>
+        {%else%}
+		<dd><input type='radio' name='catagory' value='Dairy'>Dairy</dd>
+        {% endif %}
+
+	    {% if item.catagory == 'Bakery'%} <!--desert-->
+		<dd><input type='radio' name='catagory' value='Bakery'checked>Bakery</dd>
+	    {% else %}
+	    <dd><input type='radio' name='catagory' value='Bakery'>Bakery</dd>
+	    {% endif %}
+
+	    {%if item.catagory =='Beverage'%}
+		<dd><input type='radio' name='catagory' value='Beverage'checked>Beverage</dd>
+	    {% else %}
+		<dd><input type='radio' name='catagory' value='Beverage'>Beverage</dd>
+		{% endif %}
+			
+		<br>
+
+        <input type='submit' value='Edit'>
+
+        <!--<br><br>
+
+        <a href='#'>Cancel</a>-->
+
+    </form>
+
+</div>
+
+</body>
+</html>
+

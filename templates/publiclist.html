@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+			<h1>{{ grocerylist.name }}
+			<figure class="creator">
+				<img src="{{ creator.picture }}">
+				<figcaption>{{ creator.name }}</figcaption>
+			</figure>
+			</h1>
+
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							 <li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+
+	{% if items !=[] %}
+	
+				<h2>Produce</h2>
+					{% for i in items %}
+						{% if i.catagory == 'Produce' %}
+								<h3>{{i.name}}</h3>
+								<p>{{i.description}}</p>
+								<p>{{i.price}}</p>
+						{% endif %}
+					{% endfor %}
+
+				<h2>Dairy</h2>
+					{% for i in items %}
+						{% if i.catagory == 'Dairy' %}
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p>{{i.price}}</p>
+						{% endif %}
+					{% endfor %}
+
+				<h2>Bakery</h2>
+					{% for i in items %}
+						{% if i.catagory == 'Bakery' %}
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p>{{i.price}}</p>
+						{% endif %}
+					{% endfor %}
+
+				<h2>Beverages</h2>
+					{% for i in items %}
+						{% if i.catagory == 'Beverage' %}
+							<h3>{{i.name}}</h3>
+							<p>{{i.description}}</p>
+							<p>{{i.price}}</p>
+						{% endif %}
+					{% endfor %}
+
+	{% endif %}
+
+</body>
+</html>

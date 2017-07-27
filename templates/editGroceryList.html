@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit List?</h1>
+    
+<!--Form-->
+
+    <form action="{{ url_for('editGroceryList', grocerylist_id = grocerylist.id) }}" method='post'>
+
+        <br>
+
+		<input type='text' size='30' name='name' placeholder='{{grocerylist.name}}'>
+
+        <input type='submit' value='Edit'>
+
+        <br><br>
+        
+        <a href='{{url_for('showGroceryLists')}}'>Cancel</a>
+
+	</form>
+
+</div>
+	
+</body>
+</html>

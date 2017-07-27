@@ -1,0 +1,116 @@
+<html>
+	
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+	<div class='list'>
+
+		<h1>{{grocerylist.name}}</h1>
+		
+        <!--{% with messages = get_flashed_messages() %}
+        {% if messages %}
+          
+            {% for message in messages %}
+            <strong>{{message}}</strong>
+            {% endfor %}
+	
+        {% endif %}
+        {% endwith %}-->
+
+        {% if items !=[] %}
+
+		<a href="{{url_for('newGroceryItem', grocerylist_id = grocerylist.id )}}"><p>Create New Item</p></a>
+
+<!--List-->
+
+	    <h2>Produce</h2>
+
+		{% for i in items %}
+		{% if i.catagory == 'Produce' %}
+
+		<p>{{i.name}}</p>
+
+		<p>{{i.description}}</p>
+
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Edit |</a>
+	    <a href='{{url_for('deleteGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Delete</a>
+        </br></br>
+
+		{% endif %}
+		{% endfor %}
+		</br></br>
+
+	    <h2>Dairy</h2>
+
+		{% for i in items %}
+		{% if i.catagory == 'Dairy' %}
+
+		<p>{{i.name}}</p>
+
+		<p>{{i.description}}</p>
+
+		<p>{{i.price}}</p>
+
+		<a href='{{url_for('editGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Edit |</a>
+	    <a href='{{url_for('deleteGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Delete</a>
+		<br><br>
+
+		{% endif %}
+		{% endfor %}
+		</br></br>
+
+        <h2>Bakery</h2>
+
+		{% for i in items %}
+		{% if i.catagory == 'Bakery' %}
+
+		<p>{{i.name}}</p>
+	
+		<p>{{i.description}}</p>
+
+		<p>{{i.price}}</p>
+
+		<a href='{{url_for('editGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Edit |</a>
+	    <a href='{{url_for('deleteGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Delete</a>
+		<br><br>
+		
+		{% endif %}
+		{% endfor %}
+		</br></br>
+
+        <h2>Beverages</h2>
+
+		{% for i in items %}
+		{% if i.catagory == 'Beverage' %}
+
+		<p>{{i.name}}</p>
+	
+		<p>{{i.description}}</p>
+	
+		<p>{{i.price}}</p>
+
+		<a href='{{url_for('editGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Edit |</a>
+	    <a href='{{url_for('deleteGroceryItem', grocerylist_id = grocerylist.id, list_id=i.id ) }}'>Delete</a>
+		<br><br>
+
+        {% endif %}
+		{% endfor %}
+
+
+		{% else %}
+
+		<p>You have no grocery items<p>
+			
+		<a href = "{{url_for('newGroceryItem', grocerylist_id = grocerylist.id )}}">Create New Item</a>
+		
+		{% endif %}
+	
+	</div>
+
+</body>
+</html>
