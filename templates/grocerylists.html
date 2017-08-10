@@ -9,6 +9,12 @@
     <div class='list'>
 
         <h1>Grocery Lists</h1>
+        <br>
+        {%if 'username' not in session %}
+            <a href="{{url_for('showLogin')}}">Please Log In</a>
+            {% else %}
+            <a href="{{url_for('disconnect')}}">Logout</a>
+        {% endif %}
 
         <a href="{{url_for('newGroceryList')}}"><p>Create New List</p></a>
 
