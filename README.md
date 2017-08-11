@@ -4,9 +4,9 @@ This is a dynamic application that provides a list of items within a variety of 
 1. Navigate to the directory inside a vagrant environment
 
 
-2. Run database_setup.py to create the database
+2. Run 'database_setup.py' to create the database
 
 
-3. Run app.py
+3. Run 'python app.py'
 4. Navigate to localhost:5000 in your browser
 
