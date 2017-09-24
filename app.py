@@ -366,7 +366,7 @@ def deleteGroceryItem(grocerylist_id, list_id):
         session.commit()
         return redirect(url_for('showList', grocerylist_id=grocerylist_id))
     else:
-        return render_template('deleteGroceryItem.html', item=itemToDelete)
+        return render_template('deletegroceryitem.html', item=itemToDelete)
 
 
 if __name__ == '__main__':
